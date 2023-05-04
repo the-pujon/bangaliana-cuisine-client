@@ -7,8 +7,8 @@ const Chefs = () => {
   const chefs = useLoaderData();
 
   return (
-    <div className="m-12">
-      <div className="grid grid-cols-3 gap-8">
+    <div className="m-4 md:m-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
         {chefs.map((chef, index) => (
           <div className="card w-96 bg-black/40" key={index}>
             <figure>
