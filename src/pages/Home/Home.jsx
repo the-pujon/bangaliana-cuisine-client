@@ -45,7 +45,7 @@ const Home = () => {
         </div>
         <Chefs />
       </>
-      {/*<Menu />*/}
+      <Menu />
     </div>
   );
 };
