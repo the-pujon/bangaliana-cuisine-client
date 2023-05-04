@@ -23,7 +23,7 @@ export default function Menu() {
   return (
     <div>
       <p className="text-white text-center font-semibold text-5xl">Our Menu</p>
-      <div className="bg-black/50 p-20 my-10">
+      <div className="bg-black/50 p-0 md:p-20  my-10">
         <div className="flex items-center justify-center">
           <Swiper
             //className="w-1/2 bg-black"

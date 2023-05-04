@@ -3,7 +3,7 @@ import React from "react";
 const MenuCard = ({ img, name, price }) => {
   return (
     <div>
-      <div className="card w-96 glass">
+      <div className="card w-96 bg-black md:glass">
         <figure>
           <img src={img} alt="car!" className="w-full h-60" />
         </figure>
