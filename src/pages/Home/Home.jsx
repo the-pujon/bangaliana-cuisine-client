@@ -36,8 +36,8 @@ const Home = () => {
           },
         }}
       />*/}
-      <Header />
-      {/*<About />*/}
+      {/*<Header />*/}
+      <About />
 
       {/*<>
         <div className="text-white text-5xl text-center font-bold mt-10">
