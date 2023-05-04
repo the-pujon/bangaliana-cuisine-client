@@ -4,7 +4,7 @@ import logo from "../../assets/headerName.png";
 const Footer = () => {
   return (
     <div>
-      <footer className="footer p-10 bg-black/70 text-neutral-content flex align-middle justify-between px-28">
+      <footer className="footer p-10 bg-black/70 text-neutral-content flex flex-col md:flex-row align-middle justify-between px-28">
         <div>
           <img src={logo} className="w-56" alt="" />
           <p>Copyright © 2023 - All right reserved by Bangaliana Cuisine</p>
