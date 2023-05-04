@@ -11,7 +11,7 @@ import Menu from "../../components/Menu/Menu";
 const Home = () => {
   return (
     <div>
-      <Toaster
+      {/*<Toaster
         position="top-center"
         reverseOrder={false}
         gutter={8}
@@ -35,17 +35,17 @@ const Home = () => {
             },
           },
         }}
-      />
+      />*/}
       <Header />
-      <About />
+      {/*<About />*/}
 
-      <>
+      {/*<>
         <div className="text-white text-5xl text-center font-bold mt-10">
           Our Top Chefs
         </div>
         <Chefs />
       </>
-      <Menu />
+      <Menu />*/}
     </div>
   );
 };
