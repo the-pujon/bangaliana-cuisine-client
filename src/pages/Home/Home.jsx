@@ -11,7 +11,7 @@ import Menu from "../../components/Menu/Menu";
 const Home = () => {
   return (
     <div>
-      {/*<Toaster
+      <Toaster
         position="top-center"
         reverseOrder={false}
         gutter={8}
@@ -35,7 +35,7 @@ const Home = () => {
             },
           },
         }}
-      />*/}
+      />
       <Header />
       <About />
 
