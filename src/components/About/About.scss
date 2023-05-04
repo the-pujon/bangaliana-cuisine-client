@@ -10,11 +10,20 @@
 
 
         .res__about-paragraph {
+            order: 2;
             flex: 1;
             padding: 2rem;
             padding-right: 10rem;
             border-right: 2px double rgb(255, 166, 2);
             margin-right: 10rem;
+
+            @media screen and (max-width:768px) {
+                padding-right: 0;
+                padding: 1rem;
+                margin-right: 0rem;
+                border: none;
+
+            }
         }
 
         .res__about-image {
@@ -40,6 +49,11 @@
             img {
                 height: 80vh;
             }
+        }
+
+        @media screen and (max-width:768px) {
+            flex-direction: column;
+
         }
 
     }
