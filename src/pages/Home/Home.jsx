@@ -36,16 +36,16 @@ const Home = () => {
           },
         }}
       />*/}
-      {/*<Header />*/}
+      <Header />
       <About />
 
-      {/*<>
+      <>
         <div className="text-white text-5xl text-center font-bold mt-10">
           Our Top Chefs
         </div>
         <Chefs />
       </>
-      <Menu />*/}
+      {/*<Menu />*/}
     </div>
   );
 };
