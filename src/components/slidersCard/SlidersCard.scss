@@ -22,22 +22,26 @@
         img {
             width: 30rem;
             margin-top: -2rem;
+
+            @media screen and (max-width:768px) {
+                width: 20rem;
+                margin-top: -1rem;
+
+            }
         }
 
 
         @media screen and (max-width:768px) {
             font-size: 2rem;
             line-height: 3rem;
-
-
-
         }
     }
 
     @media screen and (max-width:768px) {
-        justify-content: end;
-        align-items: start;
-        text-align: start;
+        //justify-content: end;
+        //align-items: start;
+        //text-align: start;
+        //margin-bottom: 5rem;
 
     }
 

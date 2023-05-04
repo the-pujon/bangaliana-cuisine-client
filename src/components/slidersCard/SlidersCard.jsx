@@ -9,7 +9,7 @@ const SlidersCard = ({ image, title1, title2, slogan }) => {
       <div>
         <h1>
           {title1}
-          <br /> <img src={logo} alt="" className=" text-center" />
+          <br /> <img src={logo} alt="" className=" mx-auto" />
         </h1>
         <p className="text-white">{slogan}</p>
       </div>
