@@ -41,7 +41,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black/70 rounded-box w-52"
             >
               <li>
                 <NavLink to="/">Home</NavLink>
@@ -69,7 +69,7 @@ const Navbar = () => {
         </div>
 
         {/* Avatar dropdown menu */}
-        <div className="navbar-end">
+        <div className="navbar-end me-16 md:me-0">
           {!loggedUser && (
             <Link to="/login">
               <button className="btn border-white btn-outline  btn-sm text-white hover:border-amber-600 hover:bg-transparent">

@@ -49,6 +49,10 @@
             img {
                 height: 80vh;
             }
+
+            @media screen and (max-width:768px) {
+                width: 20rem;
+            }
         }
 
         @media screen and (max-width:768px) {
