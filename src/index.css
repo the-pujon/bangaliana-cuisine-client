@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-image: url(./assets/Bg/black-gold-1.jpg);
+  /*background-image: url(./assets/Bg/black-blue-2.jpg);*/
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
