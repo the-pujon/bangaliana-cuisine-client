@@ -26,9 +26,10 @@ export default function Header() {
     <div id="Home" className="header">
       <Swiper
         spaceBetween={0}
+        speed={2000}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -39,28 +40,13 @@ export default function Header() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <SlidersCard
-            image={Chef1}
-            title1={`Welcome to `}
-            title2={"Pujon Resturent"}
-            slogan={"lorem10 lorem ledssdfdf dfhsdfjh dfhsdjkfdksfhdsfk "}
-          />
+          <SlidersCard image={Chef1} />
         </SwiperSlide>
         <SwiperSlide>
-          <SlidersCard
-            image={Chef2}
-            title1={`Welcome to `}
-            title2={"Pujon Resturent"}
-            slogan={"lorem10 lorem ledssdfdf dfhsdfjh dfhsdjkfdksfhdsfk "}
-          />
+          <SlidersCard image={Chef2} />
         </SwiperSlide>
         <SwiperSlide>
-          <SlidersCard
-            image={Chef3}
-            title1={`Welcome to `}
-            title2={"Pujon Resturent"}
-            slogan={"lorem10 lorem ledssdfdf dfhsdfjh dfhsdjkfdksfhdsfk "}
-          />
+          <SlidersCard image={Chef3} />
         </SwiperSlide>
       </Swiper>
     </div>
