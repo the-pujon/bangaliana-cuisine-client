@@ -7,12 +7,13 @@ import { auth } from "../../firebase/firebase.config";
 import { Toaster, toast } from "react-hot-toast";
 
 const SignUp = () => {
-  const { signUpWithEmail, loggedUser } = useContext(AuthContext);
+  const { signUpWithEmail } = useContext(AuthContext);
 
   const [error, setError] = useState(null);
 
   const navigate = useNavigate();
 
+  //for sign in user with email and password
   const handleRegister = (e) => {
     e.preventDefault();
 
@@ -49,6 +50,7 @@ const SignUp = () => {
 
   return (
     <div className="hero min-h-screen bg-transparent">
+      {/* for toast */}
       <Toaster
         position="top-center"
         reverseOrder={false}
@@ -83,6 +85,7 @@ const SignUp = () => {
             <div className="text-3xl text-center text-white font-semibold">
               Please Sign Up
             </div>
+            {/* name field */}
             <div className="form-control relative my-3">
               <input
                 autoComplete="off"
@@ -100,6 +103,7 @@ const SignUp = () => {
               </label>
             </div>
 
+            {/* photoURL field */}
             <div className="form-control relative my-3">
               <input
                 autoComplete="off"
@@ -116,6 +120,8 @@ const SignUp = () => {
                 Photo URL
               </label>
             </div>
+
+            {/* email field */}
             <div className="form-control relative my-3">
               <input
                 autoComplete="off"
@@ -133,6 +139,8 @@ const SignUp = () => {
                 Email
               </label>
             </div>
+
+            {/* password field */}
             <div className="form-control relative mt-3">
               <input
                 autoComplete="off"
@@ -150,13 +158,17 @@ const SignUp = () => {
                 Password
               </label>
             </div>
+            {/* redirect to login */}
             <div className="text-xs text-white">
               Already have an account?
               <Link to="/login" className="hover:text-amber-500">
                 Login
               </Link>
             </div>
+            {/* error handling */}
             {error && <div className="text-xs text-warning">{error}</div>}
+
+            {/* sign up button */}
             <div className="form-control mt-6">
               <button type="submit" className="btn  bg-amber-500 ">
                 SignUp

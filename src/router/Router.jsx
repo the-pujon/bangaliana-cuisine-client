@@ -19,7 +19,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/chefs"),
+        loader: () =>
+          fetch("https://bangaliana-cuisine-server.vercel.app/chefs"),
       },
       {
         path: "chefs/:id",
@@ -30,7 +31,9 @@ const router = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/recipes/${params.id}`),
+          fetch(
+            `https://bangaliana-cuisine-server.vercel.app/recipes/${params.id}`
+          ),
       },
 
       {

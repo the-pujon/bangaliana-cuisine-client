@@ -3,11 +3,8 @@ import { FaLongArrowAltLeft, FaThumbsUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const ChefBanner = ({ chef }) => {
-  //console.log(chef);
-
+  //destructuring from chef
   const { name, photo, experience, des, recipes, likes } = chef;
-
-  //console.log(name);
 
   return (
     <div>

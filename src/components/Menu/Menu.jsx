@@ -26,7 +26,6 @@ export default function Menu() {
       <div className="bg-black/50 p-0 md:p-20  my-10">
         <div className="flex items-center justify-center">
           <Swiper
-            //className="w-1/2 bg-black"
             effect={"coverflow"}
             grabCursor={true}
             centeredSlides={true}

@@ -1,9 +1,8 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import Header from "../../components/Header/Header";
-import { useLoaderData } from "react-router-dom";
+
 import Chefs from "../../components/Chefs/Chefs";
-import { AuthContext } from "../../Provider/AuthProvider";
-import { ToastContainer } from "react-toastify";
+
 import { Toaster } from "react-hot-toast";
 import About from "../../components/About/About";
 import Menu from "../../components/Menu/Menu";
@@ -11,6 +10,7 @@ import Menu from "../../components/Menu/Menu";
 const Home = () => {
   return (
     <div>
+      {/* for toast */}
       <Toaster
         position="top-center"
         reverseOrder={false}

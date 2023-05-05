@@ -7,14 +7,12 @@ const PrivateRouter = ({ children }) => {
 
   const location = useLocation();
 
-  console.log(location);
-
-  const navigate = useNavigate();
-
+  //for go to top after loading finish
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  //for loading until state change
   if (loading) {
     return (
       <div className="flex items-center justify-center w-full h-screen z-50 bg-black">

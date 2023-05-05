@@ -8,7 +8,6 @@ const SlidersCard = ({ image }) => {
     <div className="SlidersCard" style={{ backgroundImage: `url(${image})` }}>
       <div>
         <h1>
-          {/*{title1}*/}
           Welcome to
           <br /> <img src={logo} alt="" className=" mx-auto" />
         </h1>

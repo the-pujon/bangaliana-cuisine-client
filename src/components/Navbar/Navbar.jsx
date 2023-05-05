@@ -1,14 +1,11 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.scss";
-import avatar from "../../assets/Bg/black-blue-1.jpg";
 import { AuthContext } from "../../Provider/AuthProvider";
 import logo from "../../assets/logo1.png";
 
 const Navbar = () => {
   const { logOut, loggedUser } = useContext(AuthContext);
-
-  //console.log(displayName, photoURL);
 
   const handleLogOut = () => {
     logOut()
@@ -22,6 +19,7 @@ const Navbar = () => {
     <div>
       <div className="navbar bg-black/50 text-white fixed z-40">
         <div className="navbar-start">
+          {/* Icon for nav in mobile */}
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
@@ -39,6 +37,8 @@ const Navbar = () => {
                 />
               </svg>
             </label>
+
+            {/* for mobile */}
             <ul
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black/70 rounded-box w-52"
@@ -99,7 +99,7 @@ const Navbar = () => {
                 className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black/60 rounded-box w-52"
               >
                 <li>
-                  <button className="btn btn-ghost" onClick={handleLogOut}>
+                  <button className="btn bg-amber-500" onClick={handleLogOut}>
                     Logout
                   </button>
                 </li>

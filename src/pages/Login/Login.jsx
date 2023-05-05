@@ -16,10 +16,9 @@ const Login = () => {
 
   const path = location.state?.location?.pathname || "/";
 
-  //console.log(location);
-
   const navigate = useNavigate();
 
+  //for login with email and password
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -43,17 +42,13 @@ const Login = () => {
           setError("Wrong password");
         }
 
-        //setError(error.massege)
         console.log(error.message === "Firebase: Error (auth/user-not-found).");
       });
   };
 
+  //for login with google
   const handleGoogle = (e) => {
     e.preventDefault();
-
-    //const form = e.target;
-    //const email = form.email.value;
-    //const password = form.password.value;
 
     LogInWithGoogle()
       .then((result) => {
@@ -65,17 +60,13 @@ const Login = () => {
         navigate(path);
       })
       .catch((error) => {
-        //setError(error.massege)
         console.log(error.message === "Firebase: Error (auth/user-not-found).");
       });
   };
 
+  //for login with github
   const handleGithub = (e) => {
     e.preventDefault();
-
-    //const form = e.target;
-    //const email = form.email.value;
-    //const password = form.password.value;
 
     LogInWithGithub()
       .then((result) => {
@@ -87,13 +78,13 @@ const Login = () => {
         navigate(path);
       })
       .catch((error) => {
-        //setError(error.massege)
         console.log(error.message === "Firebase: Error (auth/user-not-found).");
       });
   };
 
   return (
     <>
+      {/* for toast */}
       <Toaster
         position="top-center"
         reverseOrder={false}
@@ -183,6 +174,7 @@ const Login = () => {
                 Continue with{" "}
               </div>
               <div className="form-control flex flex-row ">
+                {/* login with github button */}
                 <div
                   onClick={handleGithub}
                   className="btn rounded-full flex-1 bg-amber-500 "
@@ -190,6 +182,7 @@ const Login = () => {
                   <FaGithub className="text-3xl" />
                 </div>
                 <div
+                  //login with google button
                   onClick={handleGoogle}
                   className="btn rounded-full flex-1 bg-amber-500 "
                 >

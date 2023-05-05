@@ -1,33 +1,19 @@
 import React, { useEffect, useState } from "react";
-import {
-  useLoaderData,
-  useLocation,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import ChefBanner from "../../components/ChefBanner/ChefBanner";
 import { BsStar, BsStarFill } from "react-icons/bs";
 
 import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import Rating from "react-rating";
-//import { toast } from "react-toastify";
 import toast, { Toaster } from "react-hot-toast";
 
 const ChefPage = () => {
-  const location = useLocation();
   const id = useParams().id;
   const [chef, setChef] = useState({});
   const [favorite, setFavorite] = useState([]);
 
-  console.log(id);
-  //const chef = location.state.chef;
-
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
-    fetch(`http://localhost:5000/chef/${id}`)
+    fetch(`https://bangaliana-cuisine-server.vercel.app/chef/${id}`)
       .then((res) => res.json())
       .then((data) => setChef(data))
       .catch((err) => console.log(err));
@@ -35,22 +21,16 @@ const ChefPage = () => {
 
   const recipes = useLoaderData();
 
-  console.log(recipes);
-
   const handleFavorite = (id) => {
-    //const f = recipes.find((rId) => rId.id === id);
-    ////setFavorite(f.id);
-    //if (f) {
-    //  setFavorite(true);
-    //}
     const updateDisable = [...favorite, id];
     setFavorite(updateDisable);
-    //toast("added");
+
     toast.success("My favorite added");
   };
 
   return (
     <div>
+      {/* for toast */}
       <Toaster
         position="top-center"
         reverseOrder={false}
@@ -76,13 +56,17 @@ const ChefPage = () => {
           },
         }}
       />
+      {/* for showing chef banner */}
       <ChefBanner chef={chef} />
+
+      {/* for showing all recipes */}
       <div className="text-white ">
         <div className="text-center text-5xl mt-8 font-semibold">
           Top recipes by {chef.name}
         </div>
 
         <div className="grid grid-cols-3 m-8">
+          {/* mapping data */}
           {recipes.map((recipe) => (
             <div
               key={recipe.id}
@@ -95,6 +79,7 @@ const ChefPage = () => {
                 <div>Recipe name: {recipe.recipe_name}</div>
 
                 <div>
+                  {/* react rating */}
                   <Rating
                     className="pt-0 mt-0 "
                     readonly
@@ -106,6 +91,7 @@ const ChefPage = () => {
                   />
                 </div>
                 <div className="flex justify-between">
+                  {/* favorite button */}
                   <button
                     className="btn btn-sm bg-amber-500"
                     onClick={() => handleFavorite(recipe.id)}
@@ -118,6 +104,7 @@ const ChefPage = () => {
                     )}
                   </button>
                   {/* The button to open modal */}
+                  {/* see details button */}
                   <label
                     htmlFor={recipe.id}
                     className="btn btn-sm bg-amber-500 border-0"
@@ -127,7 +114,7 @@ const ChefPage = () => {
                 </div>
               </div>
 
-              {/* Put this part before </body> tag */}
+              {/* modal page after opening a modal */}
               <input type="checkbox" id={recipe.id} className="modal-toggle" />
               <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box bg-black">

@@ -10,9 +10,11 @@ const Chefs = () => {
   return (
     <div className="m-4 md:m-12">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
+        {/* mapping all data from chefs */}
         {chefs.map((chef, index) => (
           <div className="card w-96 bg-black/40" key={index}>
             <figure>
+              {/* Lazy Load added here */}
               <LazyLoad
                 height={362}
                 width={300}
@@ -37,6 +39,8 @@ const Chefs = () => {
                   <FaThumbsUp />
                   {chef.likes}
                 </p>
+
+                {/* sending to chef recipes page */}
                 <Link to={`/chefs/${chef.id}`} state={{ chef }}>
                   <button className="btn bg-amber-500">View Recipes</button>
                 </Link>

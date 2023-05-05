@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 const Root = () => {
   const { loading } = useContext(AuthContext);
 
+  //for loading whole website
   if (loading) {
     return (
       <div className="flex items-center justify-center w-full h-screen z-50 bg-black">
