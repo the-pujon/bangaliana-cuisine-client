@@ -38,9 +38,7 @@ const Chefs = () => {
                   {chef.likes}
                 </p>
                 <Link to={`/chefs/${chef.id}`} state={{ chef }}>
-                  <button className="btn bg-amber-500">
-                    View Recipes Button
-                  </button>
+                  <button className="btn bg-amber-500">View Recipes</button>
                 </Link>
               </div>
             </div>

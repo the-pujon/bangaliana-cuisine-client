@@ -8,6 +8,7 @@ import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import ChefPage from "../pages/ChefPage/ChefPage";
 import PrivateRouter from "./PrivateRouter";
+import MenuPage from "../pages/MenuPage/MenuPage";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
   {
     path: "/blog",
     element: <Blog />,
+  },
+  {
+    path: "/menu",
+    element: <MenuPage />,
   },
 ]);
 

@@ -13,3 +13,21 @@
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+
+:root ::-webkit-scrollbar {
+  width: 1px;
+}
+
+:root ::-webkit-scrollbar-track {
+  background: black;
+  border-radius: 10px;
+}
+
+:root ::-webkit-scrollbar-thumb {
+  background: #f59e0b;
+  border-radius: 10px;
+}
+
+:root ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

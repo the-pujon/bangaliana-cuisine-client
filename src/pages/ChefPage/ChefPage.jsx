@@ -151,7 +151,7 @@ const ChefPage = () => {
                     </div>
                   </div>
                   <div className="modal-action">
-                    <label htmlFor={recipe.id} className="btn">
+                    <label htmlFor={recipe.id} className="btn bg-amber-500">
                       Close
                     </label>
                   </div>

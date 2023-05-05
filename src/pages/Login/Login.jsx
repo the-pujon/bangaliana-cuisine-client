@@ -3,17 +3,20 @@ import login from "../../assets/data-protection.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Toaster, toast } from "react-hot-toast";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 
 const Login = () => {
   const [error, setError] = useState(null);
 
-  const { loginWithEmail } = useContext(AuthContext);
+  const { loginWithEmail, LogInWithGithub, LogInWithGoogle } =
+    useContext(AuthContext);
 
   const location = useLocation();
 
   const path = location.state?.location?.pathname || "/";
 
-  console.log(location);
+  //console.log(location);
 
   const navigate = useNavigate();
 
@@ -40,6 +43,50 @@ const Login = () => {
           setError("Wrong password");
         }
 
+        //setError(error.massege)
+        console.log(error.message === "Firebase: Error (auth/user-not-found).");
+      });
+  };
+
+  const handleGoogle = (e) => {
+    e.preventDefault();
+
+    //const form = e.target;
+    //const email = form.email.value;
+    //const password = form.password.value;
+
+    LogInWithGoogle()
+      .then((result) => {
+        console.log(result.user);
+
+        setError(null);
+        toast.success("login successful");
+
+        navigate(path);
+      })
+      .catch((error) => {
+        //setError(error.massege)
+        console.log(error.message === "Firebase: Error (auth/user-not-found).");
+      });
+  };
+
+  const handleGithub = (e) => {
+    e.preventDefault();
+
+    //const form = e.target;
+    //const email = form.email.value;
+    //const password = form.password.value;
+
+    LogInWithGithub()
+      .then((result) => {
+        console.log(result.user);
+
+        setError(null);
+        toast.success("login successful");
+
+        navigate(path);
+      })
+      .catch((error) => {
         //setError(error.massege)
         console.log(error.message === "Firebase: Error (auth/user-not-found).");
       });
@@ -72,13 +119,13 @@ const Login = () => {
           },
         }}
       />
-      <div className="hero min-h-screen bg-transparent">
+      <div className="hero min-h-screen bg-none">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left text-white">
             <img src={login} alt="" />
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-transparent ">
-            <form onSubmit={handleLogin} className="card-body">
+            <form onSubmit={handleLogin} className="card-body bg-transparent">
               <div className="text-3xl text-center text-white font-semibold">
                 Please Login
               </div>
@@ -127,6 +174,27 @@ const Login = () => {
                 <button type="submit" className="btn  bg-amber-500 ">
                   Login
                 </button>
+              </div>
+
+              <div className="text-white text-2xl text-center font-semibold">
+                Or
+              </div>
+              <div className="text-white text-center -mt-2 text-sm">
+                Continue with{" "}
+              </div>
+              <div className="form-control flex flex-row ">
+                <div
+                  onClick={handleGithub}
+                  className="btn rounded-full flex-1 bg-amber-500 "
+                >
+                  <FaGithub className="text-3xl" />
+                </div>
+                <div
+                  onClick={handleGoogle}
+                  className="btn rounded-full flex-1 bg-amber-500 "
+                >
+                  <FcGoogle className="text-3xl" />
+                </div>
               </div>
             </form>
           </div>

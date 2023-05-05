@@ -50,6 +50,9 @@ const Navbar = () => {
               <li>
                 <NavLink to="/blog">Blog</NavLink>
               </li>
+              <li>
+                <NavLink to="/menu">Menu</NavLink>
+              </li>
             </ul>
           </div>
           <img src={logo} alt="" className="w-32" />
@@ -64,6 +67,10 @@ const Navbar = () => {
 
             <li>
               <NavLink to="/blog">Blog</NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/menu">Menu</NavLink>
             </li>
           </ul>
         </div>
